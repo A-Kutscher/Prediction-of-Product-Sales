@@ -41,18 +41,24 @@ For this dataset, there were 8523 rows and 12 columns, respresenting 1559 items 
 
 ## **METHODS**
 
------ EXPLAIN PROJECT STEPS AND RESULTS IN SIMPLE TERMS
+1. Data Cleaning:
+Organize and clean sales data by removing duplicates, handling missing values, and addressing outliers for accurate analysis.
+
+2. Exploratory Data Analysis (EDA):
+Explore the data to understand patterns and relationships between variables. Perform univariate, bivariate, and multivariate analysis to gain insights into sales trends and influencing factors.
+
+3. Regression Models:
+Select relevant features that influence sales and choose an appropriate regression model (e.g., multiple linear regression) based on data characteristics. Evaluate the model's performance using metrics like Root Mean Squared Error (RMSE) and R-Squared (R^2 or R2) to ensure accurate predictions.
+
+    By following these steps, we can calculate the anticipated 2023 sales based on historical data and identified relationships between various factors influencing sales.
 
 ## **RESULTS**
 
-- To prepare this data, the data was cleaned in order to fix and/or remove any duplicate, inconsistent, or missing values.
-- To better understand each data type, the cleaned data was then explored through Exploratory Data Analysis in order to visualize each columns data type, categories, and overall count.
-
-### -Exploratory Data Analysis-
-    - During the exploratory data analysis, histograms and boxplots were visualized for each numeric datatype column. 
-    - Countplots were visualized for the categorical columns (minus the Item_Identifier column). 
-    - And a heatmap was visualized as well, which provided us with details showing the correlation between the numeric datatype columns.
-    - These visuals gave a good baseline for all of the numeric and categorical columns for univariate EDA.
+### -Exploratory Data Analysis (EDA)-
+  - During the exploratory data analysis, histograms and boxplots were visualized for each numeric datatype column. 
+  - Countplots were visualized for the categorical columns (minus the Item_Identifier column). 
+  - And a heatmap was visualized as well, which provided us with details showing the correlation between the numeric datatype columns.
+  - These visuals gave a good baseline for all of the numeric and categorical columns for univariate EDA.
   
 > Visualization 1: *Frequency of Item_Type* 
 <p align = "center">
@@ -72,12 +78,27 @@ For this dataset, there were 8523 rows and 12 columns, respresenting 1559 items 
 
 ## **MODEL**
 
---------------Describe final model, report most important metrics, refer to metrics to describe how well the model would solve the business problem.
+### Final Model Description:
+
+The final model selected for this analysis is the Linear Regression Model. It was chosen due to its ability to strike a better balance between overfitting and underfitting compared to the other model options.
+
+### Most Important Metrics:
+
+The key metrics for evaluating the final model's performance are as follows:
+  - R-squared (R^2) on Training Data: 0.56
+  - Root Mean Square Error (RMSE) on Training Data: 1139.12
+  - R-squared (R^2) on Test Data: 0.57
+  - Root Mean Square Error (RMSE) on Test Data: 1092.76
+
+### Model's Solution to the Business Problem:
+
+The Linear Regression Model demonstrates reasonable generalization to new data, explaining approximately 57% of the target variable's variation. Despite some error, its predictions are consistent and reliable, supporting data-driven decisions for optimizing processes and resource allocation. While room for improvement exists, the model effectively addresses the business problem, providing valuable insights for informed decision-making. Exploring alternative models or enhancing the existing one can further enhance its performance.
 
 ## **RECOMMENDATIONS**
 
------------------Insert recommendations here.
+To ensure accurate and reliable forecasts, we recommend exploring a range of predictive models. While the linear regression model shows reasonable performance, trying alternative models can unveil implicit patterns for more precise predictions. A comparative approach with multiple models will help us find the best-fit solution, considering data characteristics and the business problem. By leveraging various algorithms, we can enhance accuracy and gain deeper insights. Ultimately, model variation improves robustness and aids in better decision-making for Big Mart.
 
 ## **LIMITATIONS & NEXT STEPS**
 
-----------------analysis here
+1. Limitations: The current model struggles with complex patterns. Trying more advanced models could help improve data by creating new features.
+2. Next Steps: Experiment with and fine-tune various models, use combination methods, and gather more relevant data. Collaborate with our stakeholders for better insights. Monitor model performance and update it with new data as needed.
