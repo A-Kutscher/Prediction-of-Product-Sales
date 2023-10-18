@@ -151,3 +151,5 @@ SHAP Dot Plot
     - "Item_MRP" -- As a products list price or Item MRP increases, its overall item outlet sales also increase.
     - "Outlet_Type_Grocery Store" -- Grocery Stores have less of an impact on item outlet sales than Supermarkets do.
     - "Outlet_Type_Supermarket Type3" -- Of the 3 types of supermarkets, Supermarket Type3 has the highest financial impact on item outlet sales. Perhaps these are the largest of the 3.
+ 
+![SHAP Dot Plot](Images/shap_dot_plot.png)
