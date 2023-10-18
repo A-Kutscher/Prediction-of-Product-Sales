@@ -115,7 +115,7 @@ LinearRegression: *Coefficients*
     - "Outlet_Type_Supermarket Type1" -- If the outlet type is Supermarket Type1, the predicted Item_Outlet_Sales increases by 275.50.
     - "Outlet_Size_Medium" -- If the outlet stores ground area is considered medium, Item_Outlet_Sales increase by 113.68.
 
-![LinearRegression: Coefficients](Figures/lin_reg_coeffs.png)
+![LinearRegression: Coefficients](Images/lin_reg_coeffs.png)
 
 RandomForestRegressor: *Importances*
 - The top 5 most important features are:
@@ -125,4 +125,29 @@ RandomForestRegressor: *Importances*
     - Outlet_Type_Supermarket Type3 -- If the Supermarket is Type3, there is an importance of 0.07 (7%) in determining item outlet sales.
     - Item_Weight -- The weight of the product has a 0.05 (5%) importance on determining item outlet sales.
 
-![RandomForestRegressor: Importances](Figures/randomforest_coeffs.png)
+![RandomForestRegressor: Importances](Images/randomforest_coeffs.png)
+
+SHAP Bar Plot
+- The most important features according to SHAP are:
+    - Item_MRP
+    - Outlet_Type_Grocery Store
+    - Outlet_Type_Supermarket Type3
+    - Item_Visibility
+    - Item_Weight
+
+- In comparison, the 5 most important features from our original model are:
+    - Item_MRP
+    - Outlet_Type_Grocery Store
+    - Item_Visibility
+    - Outlet_Type_Supermarket Type3
+    - Item_Weight
+
+As can be seen, the most important features according to both models are the same, however the order is a bit different.
+
+![SHAP Bar Plot](Images/shap_bar_plot.png)
+
+SHAP Dot Plot
+- As per the SHAP ummary - Dot Plot, the 3 most important features are:
+    - "Item_MRP" -- As a products list price or Item MRP increases, its overall item outlet sales also increase.
+    - "Outlet_Type_Grocery Store" -- Grocery Stores have less of an impact on item outlet sales than Supermarkets do.
+    - "Outlet_Type_Supermarket Type3" -- Of the 3 types of supermarkets, Supermarket Type3 has the highest financial impact on item outlet sales. Perhaps these are the largest of the 3.
