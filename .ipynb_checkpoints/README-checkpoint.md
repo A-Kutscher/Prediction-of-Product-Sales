@@ -114,6 +114,7 @@ LinearRegression: *Coefficients*
     - "Outlet_Type_Supermarket Type3" -- If the outlet type is Supermarket Type3, the predicted Item_Outlet_Sales increases by 1500.56.
     - "Outlet_Type_Supermarket Type1" -- If the outlet type is Supermarket Type1, the predicted Item_Outlet_Sales increases by 275.50.
     - "Outlet_Size_Medium" -- If the outlet stores ground area is considered medium, Item_Outlet_Sales increase by 113.68.
+
 ![LinearRegression: Coefficients](Figures/lin_reg_coeffs.png)
 
 RandomForestRegressor: *Importances*
@@ -123,4 +124,5 @@ RandomForestRegressor: *Importances*
     - Item_Visibility -- How visible an item is and/or how much display area the product takes up has the third highest importance of 0.10 (10%) in determining item outlet sales.
     - Outlet_Type_Supermarket Type3 -- If the Supermarket is Type3, there is an importance of 0.07 (7%) in determining item outlet sales.
     - Item_Weight -- The weight of the product has a 0.05 (5%) importance on determining item outlet sales.
+
 ![RandomForestRegressor: Importances](Figures/randomforest_coeffs.png)
