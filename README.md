@@ -27,7 +27,11 @@ For this dataset, there were 8523 rows and 12 columns, respresenting 1559 items 
 
   The repository has the following structure:
   ```
+  - Data
+  - Figures
+  - best-models.joblib
   - Prediction_of_Product_Sales_Amber_Kutscher.ipynb
+  - Project 1 - Revisted__Amber_Kutscher.ipynb
   - README.md
   ```
 
@@ -102,3 +106,21 @@ To ensure accurate and reliable forecasts, we recommend exploring a range of pre
 
 1. Limitations: The current model struggles with complex patterns. Trying more advanced models could help improve data by creating new features.
 2. Next Steps: Experiment with and fine-tune various models, use combination methods, and gather more relevant data. Collaborate with our stakeholders for better insights. Monitor model performance and update it with new data as needed.
+
+## **IMPORTANCES AND COEFFICIENTS**
+
+LinearRegression: *Coefficients*
+- The top 3 most impactful features are:
+    - "Outlet_Type_Supermarket Type3" -- If the outlet type is Supermarket Type3, the predicted Item_Outlet_Sales increases by 1500.56.
+    - "Outlet_Type_Supermarket Type1" -- If the outlet type is Supermarket Type1, the predicted Item_Outlet_Sales increases by 275.50.
+    - "Outlet_Size_Medium" -- If the outlet stores ground area is considered medium, Item_Outlet_Sales increase by 113.68.
+> ![LinearRegression: Coefficients](Figures/lin_reg_coeffs.png)
+
+RandomForestRegressor: *Importances*
+- The top 5 most important features are:
+    - Item_MRP -- The maximum retail price of the product has the highest importance of 0.45 (45%) on determining item outlet sales.
+    - Outlet_Type_Grocery Store -- If the outlet type is a grocery store, it has an importance of 0.20 (20%) in determining item outlet sales.
+    - Item_Visibility -- How visible an item is and/or how much display area the product takes up has the third highest importance of 0.10 (10%) in determining item outlet sales.
+    - Outlet_Type_Supermarket Type3 -- If the Supermarket is Type3, there is an importance of 0.07 (7%) in determining item outlet sales.
+    - Item_Weight -- The weight of the product has a 0.05 (5%) importance on determining item outlet sales.
+> ![RandomForestRegressor: Importances](Figures/randomforest_coeffs.png)
