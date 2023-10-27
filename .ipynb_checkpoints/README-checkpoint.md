@@ -111,20 +111,37 @@ To ensure accurate and reliable forecasts, we recommend exploring a range of pre
 ## **IMPORTANCES AND COEFFICIENTS**
 
 Linear Regression: *Coefficients*
-- The top 3 most impactful features are:
-  - "Outlet_Type_Supermarket Type3" -- If the outlet type is Supermarket Type3, the predicted Item_Outlet_Sales increases by 1500.56.
-  - "Outlet_Type_Supermarket Type1" -- If the outlet type is Supermarket Type1, the predicted Item_Outlet_Sales increases by 275.50.
-  - "Outlet_Size_Medium" -- If the outlet stores ground area is considered medium, Item_Outlet_Sales increase by 113.68.
+The top 3 most impactful features are:
+1. Outlet_Type_Grocery Store (-1,573.87):
+    - This feature has the most significant impact on the target variable.
+    - A store classified as "Grocery Store" has a substantial negative effect on the target variable. In this context, it indicates that items sold in grocery stores tend to have much lower sales compared to other types of outlets.
+
+2. Outlet_Type_Supermarket Type3 (1,490.95):
+    - Supermarket Type3 is the second most impactful feature with a large positive coefficient.
+    - Items sold in "Supermarket Type3" outlets have a substantial positive effect on sales, suggesting that this type of outlet tends to have significantly higher sales compared to other outlet types.
+
+3. Item_Visibility (-316.43):
+    - The third most impactful feature is "Item_Visibility."
+    - This feature has a significant negative impact on sales. It indicates that as the visibility of an item in a store decreases, the sales tend to increase. This might be counterintuitive, and further analysis is needed to understand why this is the case. It could be due to outliers or specific patterns in the data.
 
 ![Linear Regression: Coefficients](Images/lin_reg_coeffs.png)
 
 RandomForestRegressor: *Importances*
-- The top 5 most important features are:
-  - Item_MRP -- The maximum retail price of the product has the highest importance of 0.45 (45%) on determining item outlet sales.
-  - Outlet_Type_Grocery Store -- If the outlet type is a grocery store, it has an importance of 0.20 (20%) in determining item outlet sales.
-  - Item_Visibility -- How visible an item is and/or how much display area the product takes up has the third highest importance of 0.10 (10%) in determining item outlet sales.
-  - Outlet_Type_Supermarket Type3 -- If the Supermarket is Type3, there is an importance of 0.07 (7%) in determining item outlet sales.
-  - Item_Weight -- The weight of the product has a 0.05 (5%) importance on determining item outlet sales.
+The top 5 most important features are:
+1. Item_MRP (0.45):
+    - This feature has the highest importance score, indicating that it has the most significant impact on the target variable. Item Maximum Retails Price (MRP) is a crucial factor in determining sales.
+
+2. Outlet_Type_Grocery Store (0.19):
+    - The type of outlet being a "Grocery Store" is the second most important feature. It suggests that this type of outlet significantly affects sales, likely indicating lower sales compared to other outlet types.
+
+3. Item_Visibility (0.11):
+    - Item visibility plays a substantial role in sales. However, it has a negative impact, suggesting that as item visibility increases, sales tend to decrease.
+
+4. Outlet_Type_Supermarket Type3 (0.07):
+    - The presence of "Supermarket Type3" is the fourth most important feature. It has a positive impact on sales, indicating higher sales in this type of outlet.
+
+5. Item_Weight (0.05):
+    - Item weight is the fifth most important feature, but its impact is relatively smaller compared to the top features. It suggests that the weight of items may have some influence on sales.
 
 ![RandomForestRegressor: Importances](Images/randomforest_coeffs.png)
 
