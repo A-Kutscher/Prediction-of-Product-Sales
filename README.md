@@ -148,9 +148,12 @@ As can be seen, the most important features according to both models are the sam
 ![SHAP Bar Plot](Images/shap_bar_plot.png)
 
 SHAP Dot Plot
-- As per the SHAP summary - Dot Plot, the 3 most important features are:
-  - "Item_MRP" -- As a product's list price or Item MRP increases, its overall item outlet sales also increase.
-  - "Outlet_Type_Grocery Store" -- Grocery Stores have less of an impact on item outlet sales than Supermarkets do.
-  - "Outlet_Type_Supermarket Type3" -- Of the 3 types of supermarkets, Supermarket Type3 has the highest financial impact on item outlet sales. Perhaps these are the largest of the 3.
+As per the SHAP ummary - Dot Plot, the 3 most important features are:
+1. "Item_MRP"
+    - When the listed price (Item MRP) of a product increases, the model predicts higher overall item outlet sales. This implies that as the price of a product goes up, the model anticipates an increase in the number of units sold for that product.
+2. "Outlet_Type_Grocery Store"
+    - Products sold in grocery stores have a smaller impact on item outlet sales compared to those sold in supermarkets. In other words, the type of outlet significantly influences the model's predictions, and grocery stores tend to have a lower effect on sales.
+3. "Outlet_Type_Supermarket Type3"
+    - Among the three types of supermarkets, Supermarket Type3 has the most substantial financial impact on item outlet sales, according to the model. This suggests that Supermarket Type3 stores may be the largest among the three and have the highest influence on the predicted sales of products.
 
 ![SHAP Dot Plot](Images/shap_dot_plot.png)
