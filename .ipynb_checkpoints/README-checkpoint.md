@@ -145,6 +145,8 @@ The top 5 most important features are:
 
 ![RandomForestRegressor: Importances](Images/randomforest_coeffs.png)
 
+## **GLOBAL EXPLANATIONS**
+
 SHAP Bar Plot
 - The most important features according to SHAP are:
   - Item_MRP
@@ -166,11 +168,62 @@ As can be seen, the most important features according to both models are the sam
 
 SHAP Dot Plot
 As per the SHAP ummary - Dot Plot, the 3 most important features are:
-1. "Item_MRP"
-    - When the listed price (Item MRP) of a product increases, the model predicts higher overall item outlet sales. This implies that as the price of a product goes up, the model anticipates an increase in the number of units sold for that product.
+1. "Outlet_Type_Supermarket Type3"
+    - Among the three types of supermarkets, Supermarket Type3 has the most substantial financial impact on item outlet sales, according to the model. This suggests that Supermarket Type3 stores may be the largest among the three and have the highest influence on the predicted sales of products.
 2. "Outlet_Type_Grocery Store"
     - Products sold in grocery stores have a smaller impact on item outlet sales compared to those sold in supermarkets. In other words, the type of outlet significantly influences the model's predictions, and grocery stores tend to have a lower effect on sales.
-3. "Outlet_Type_Supermarket Type3"
-    - Among the three types of supermarkets, Supermarket Type3 has the most substantial financial impact on item outlet sales, according to the model. This suggests that Supermarket Type3 stores may be the largest among the three and have the highest influence on the predicted sales of products.
-
+3. "Item_MRP"
+    - When the listed price (Item MRP) of a product increases, the model predicts higher overall item outlet sales. This implies that as the price of a product goes up, the model anticipates an increase in the number of units sold for that product.
+      
 ![SHAP Dot Plot](Images/shap_dot_plot.png)
+
+## **LOCAL EXPLANATIONS**
+
+We chose to investigate high sales and low sales examples because understanding the factors that contribute to these extreme predictions can provide valuable insights into the model's behavior. Here's why we looked into high and low sales:
+
+1. High Sales:
+    - Analyzing high sales examples helps us understand the features and conditions that lead to successful, high-revenue scenarios.
+    - It allows us to identify the factors that have the most positive impact on sales, which can be leveraged to optimize strategies and increase revenue.
+    - Knowing the top features for high sales can guide decisions related to product placement, pricing, and store locations.
+2. Low Sales:
+    - Investigating low sales examples helps us uncover the attributes and circumstances associated with underperforming products or outlets.
+    - It highlights the features that have a significant negative impact on sales, allowing for targeted improvements to boost revenue.
+    - Understanding the top factors for low sales can lead to strategies to enhance product visibility, adjust pricing, or address specific issues with certain product categories or store types.
+
+By examining both high and low sales scenarios, we gain a comprehensive understanding of the model's behavior and can make data-driven decisions to optimize sales and revenue.
+
+**High Sales**
+![LIME Explanation High Sales](Images/lime_explanation_high_sales.png)
+![LIME ForcePlot High Sales](Images/lime_forceplot_high_sales.png)
+
+Based on the LIME explanations, it appears that the following features heavily influenced the model's predictions for the high sales example:
+1. Outlet_Type_Grocery Store (0.00): This feature has a low impact on the predicted sales, which is expected as grocery stores typically have lower sales compared to other types of outlets.
+2. Item_MRP (228.04): The most significant feature affecting sales is the Maximum Retail Price (Item MRP). A higher MRP corresponds to higher predicted sales, suggesting that as the price of a product increases, the model predicts higher sales.
+3. Outlet_Type_Supermarket Type3 (1.00): Supermarket Type3 has the highest impact among the outlet types on the predicted sales. This implies that this type of supermarket is expected to have a substantial positive influence on sales.
+4. Item_Type_Seafood (0.00): Seafood items have a low impact on sales predictions.
+5. Item_Type_Starchy Foods (0.00): Starchy Foods also have a low impact on sales predictions.
+6. Item_Type_Frozen Foods (0.00): The type of food categorized as Frozen Foods has a low impact on sales predictions.
+7. Item_Type_Meat (0.00): Meat products have a low impact on sales predictions.
+8. Outlet_Type_Supermarket Type2 (0.00): Supermarket Type2 has little to no impact on sales predictions.
+9. Item_Type_Health and Hygiene (0.00): Health and Hygiene items also have a low impact on sales predictions.
+10. Item_Type_Breads (0.00): The category of Breads has a low impact on sales predictions.
+
+In summary, the model's predictions for high sales are primarily influenced by the product's Maximum Retail Price (Item MRP), the type of outlet (with Supermarket Type3 having the most significant impact), and various product categories, with some categories having low or negligible effects on sales.
+
+**Low Sales**
+![LIME Explaination Low Sales](Images/lime_explanation_low_sales.png)
+![LIME ForcePlot Low Sales](Images/lime_forceplot_low_sales.png)
+
+According to the LIME explanations for the low sales example, the following features most heavily influenced the model's predictions:
+1. Outlet_Type_Grocery Store (1.00): The type of outlet being a "Grocery Store" has a significant impact on the model's prediction for low sales. A grocery store type of outlet is associated with lower sales.
+2. Item_MRP (33.39): The Maximum Retail Price (Item MRP) still plays a role in influencing sales, but in this case, lower MRP values are associated with low predicted sales.
+3. Outlet_Type_Supermarket Type3 (0.00): For low sales, Supermarket Type3 does not have a strong influence on the model's predictions.
+4. Item_Type_Starchy Foods (0.00): Starchy Foods, in this context, have a minimal impact on sales predictions for low sales.
+5. Item_Type_Breads (0.00): The category of Breads also has a minimal impact on sales predictions for low sales.
+6. Item_Type_Others (0.00): The category "Others" has little influence on the model's predictions for low sales.
+7. Outlet_Size_High (0.00): The size of the outlet being "High" has a negligible impact on low sales predictions.
+8. Item_Type_Canned (0.00): The category of Canned items also has a minimal effect on low sales predictions.
+9. Item_Type_Health and Hygiene (0.00): Health and Hygiene items have little impact on low sales predictions.
+10. Item_Type_Seafood (0.00): Seafood items have a minimal effect on the model's predictions for low sales.
+
+In summary, for the low sales prediction, the type of outlet (Grocery Store) and the product's Maximum Retail Price (Item MRP) are the most influential factors, with lower MRP values being associated with low predicted sales. Other product categories and outlet types have little to no impact on low sales predictions.
