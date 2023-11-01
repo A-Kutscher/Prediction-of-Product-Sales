@@ -197,7 +197,7 @@ By examining both high and low sales scenarios, we gain a comprehensive understa
 ![LIME ForcePlot High Sales](Images/lime_forceplot_high_sales.png)
 
 Based on the LIME explanations, it appears that the following features heavily influenced the model's predictions for the high sales example:
-1. Outlet_Type_Grocery Store (0.00): This feature has a low impact on the predicted sales, which is expected as grocery stores typically have lower sales compared to other types of outlets.
+1. Outlet_Type_Grocery Store (0.00): This feature has a low impact on the predicted sales, which is expected as grocery sImages/lime_explanation_high_sales.png
 2. Item_MRP (228.04): The most significant feature affecting sales is the Maximum Retail Price (Item MRP). A higher MRP corresponds to higher predicted sales, suggesting that as the price of a product increases, the model predicts higher sales.
 3. Outlet_Type_Supermarket Type3 (1.00): Supermarket Type3 has the highest impact among the outlet types on the predicted sales. This implies that this type of supermarket is expected to have a substantial positive influence on sales.
 4. Item_Type_Seafood (0.00): Seafood items have a low impact on sales predictions.
